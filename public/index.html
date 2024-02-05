@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Parameters Preview</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <script type="text/javascript" src="nLPlugin.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+
+  <input type="text" id="url" value="ws://localhost:22022" />
+  <button type="button" onclick="connect()">Connect</button>
+  <br>
+  State:
+  <label id="state">Closed</label>
+
+  <div>
+    ModelId: 
+    <label id="modelId"></label>
+    <div class="split-preview">
+      <div>
+        <h2>Live Parameters</h2>
+        <table>
+          <tbody id="livePreview"></tbody>
+        </table>
+      </div>
+      <div>
+        <h2>Cubism Parameters</h2>
+        <table>
+          <tbody id="cubismPreview"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
