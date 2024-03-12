@@ -6,7 +6,7 @@
 
 const nLPlugin = new NLPlugin("Parameters Preview")
 nLPlugin.developer = "Live2D Inc."
-nLPlugin.version = "1.0.0"
+nLPlugin.version = "1.0.1"
 nLPlugin.token = localStorage.getItem("token")
 // nLPlugin.debug = true
 
@@ -32,7 +32,8 @@ nLPlugin.onStateChanged = (state) => {
         case NLPlugin.ESTABLISHED:
             document.getElementById("state").textContent = "Established"
             // Token の保存
-            localStorage.setItem("token", nLPlugin.token)
+            if (!location.href.startsWith("file://"))
+                localStorage.setItem("token", nLPlugin.token)
             break
         case NLPlugin.AVAILABLE:
             document.getElementById("state").textContent = "Available"
